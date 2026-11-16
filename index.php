@@ -21,31 +21,32 @@ $urgent=filtrerUrgence($patients);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liste des Patients</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>Liste des Patients</h1>
-    <div>
+
+    <div class="grille">
         <?php foreach($patients as $p):?>
             <?php
             $badge = getBadgeService($p["code_service"]);
             $libelle = getLibelleUrgence($p["urgence"]);
             $facture = calculerFacture($p["age"],TARIF_BASE_CONSULTATION);
             ?>
-            <article>
+            <article class="carte urgence-<?= strtolower($p["urgence"]) ?>">
                 <h2><?=$p["nom"]?> (<?=$p["age"]?>)</h2>
-                <span>
+                <span class="badge <?= $badge["classe"] ?>">
                     <?=$badge["libelle"]?>
                 </span>
-                <p><strong>Niveau d'urgence: </strong><?=$libelle?></p>
-                <p><strong>Facture estimée: </strong><?=$facture?></p>
+                <p><strong>Niveau d'urgence : </strong><?=$libelle?></p>
+                <p class="facture"><strong>Facture estimée : </strong><?=$facture?></p>
             </article>
         <?php endforeach;?>
     </div>
 
-    <section>
+    <section class="recapitulatif">
         <h2>Récapitulatif</h2>
-        <p><strong>Nombre total de patients: </strong><?=count($patients)?></p>
+        <p class="total"><strong>Nombre total de patients : </strong><?=count($patients)?></p>
         <h3>Urgences Absolues (ROUGE)</h3>
         <ul>
         <?php foreach($urgent as $u):?>
@@ -53,8 +54,6 @@ $urgent=filtrerUrgence($patients);
             <li><?=$u["nom"]?> - <?=$b["libelle"]?></li>
         <?php endforeach;?>
         </ul>
-    
     </section>
-    
 </body>
 </html>

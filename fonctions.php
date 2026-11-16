@@ -14,11 +14,11 @@ function getBadgeService(string $code): array{
         case "CARDIO":
             return ["libelle"=>"Cardiologie", "classe"=>"badge-CARDIO"];
         case "DERMA":
-            return ["libelle"=>"Dermatologie", "classe"=>"badge-Derma"];
+            return ["libelle"=>"Dermatologie", "classe"=>"badge-DERMA"];
         case "PEDIATRIE":
             return ["libelle"=>"Pédiatrie", "classe"=>"badge-PEDIATRIE"];
     }
-}
+}   
 
 function filtrerUrgence(array $patients):array{
     return array_values(

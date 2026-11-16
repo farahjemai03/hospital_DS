@@ -1,0 +1,55 @@
+body {
+  background: #e0f2fe;   /* light blue */
+  margin: 0;
+  padding: 24px;
+  font-family: system-ui, sans-serif;
+}
+
+h1 { color: #0f172a; margin-bottom: 24px; }
+
+.grille {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.carte {
+  background: #fff;
+  border-radius: 10px;
+  border-left: 6px solid #94a3b8;   /* color is now on the left */
+  padding: 16px;
+}
+
+.carte h2 { font-size: 1.1rem; margin: 0 0 10px; color: #0f172a; }
+.carte p  { margin: 8px 0; color: #373a34; }
+
+/* Urgency*/
+.urgence-rouge  { border-left-color: #dc2626; }
+.urgence-orange { border-left-color: #f59e0b; }
+.urgence-vert   { border-left-color: #16a34a; }
+
+/* Service badges */
+.badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 999px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 0.85rem;
+}
+.badge-CARDIO    { background: #dc2626; }
+.badge-DERMA     { background: #0d9488; }
+.badge-PEDIATRIE { background: #7c3aed; }
+
+/* recapitulatif */
+.recapitulatif {
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 16px;
+  margin-top: 32px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+}
+.recapitulatif h2 { font-size: 1.4rem; color: #070000; margin-bottom: 12px; }
+.recapitulatif h3 { font-size: 1rem; color: #000000; margin: 16px 0 8px; }
+.recapitulatif ul { padding-left: 20px; color: #373a34; }
+.recapitulatif li { margin-bottom: 6px; }
