@@ -20,7 +20,7 @@ function getBadgeService(string $code): array{
     }
 }
 
-function filtrerUrgence(array $patients):string{
+function filtrerUrgence(array $patients):array{
     return array_values(
         array_filter(
             $patients, fn(array $p): bool => $p["urgence"]==="ROUGE"
